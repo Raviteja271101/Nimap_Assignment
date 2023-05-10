@@ -38,7 +38,7 @@ public class CategoryController {
 	
 	// get all
 	@GetMapping("/category")
-	public List<Category> getAllCategory(@RequestParam (defaultValue="0") int page,@RequestParam (defaultValue="0") int size){
+	public List<Category> getAllCategory(@RequestParam (defaultValue="0") int page,@RequestParam (defaultValue="5") int size){
 		
 		Page <Category >list=cateRepo.findAll(PageRequest.of(page, size));
 		List<Category>allList=list.getContent();
